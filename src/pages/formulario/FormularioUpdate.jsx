@@ -83,6 +83,8 @@ const FormularioUpdate = ({
           }
           fullWidth
         />
+                <InputLabel>Url de Imagen</InputLabel>
+
         <TextField
           label="Url de Imagen"
           variant="outlined"
@@ -96,7 +98,7 @@ const FormularioUpdate = ({
 
         <InputLabel>Requisios</InputLabel>
         <TextField
-          label="urlimagen"
+          label="Requisitos"
           variant="outlined"
           type="text"
           value={updatedUser.requisitos || ""}

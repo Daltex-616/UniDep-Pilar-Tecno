@@ -76,7 +76,7 @@ const FormularioAdd = ({ newUser, setNewUser, handleAddUser,handleCleanAddUser }
         <InputLabel>Url de Imagen</InputLabel>
         <TextField
           id="urlimg"
-          label="urlimagen"
+          label="Url de Imagen"
           variant="outlined"
           type="text"
           value={newUser.urlimg || ""}
@@ -88,7 +88,7 @@ const FormularioAdd = ({ newUser, setNewUser, handleAddUser,handleCleanAddUser }
         <InputLabel>Requisios</InputLabel>
         <TextField
           id="requisitos"
-          label="urlimagen"
+          label="Requisitos"
           variant="outlined"
           type="text"
           value={newUser.requisitos || ""}
