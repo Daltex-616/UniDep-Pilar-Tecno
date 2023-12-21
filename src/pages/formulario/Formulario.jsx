@@ -55,9 +55,14 @@ const Formulario = () => {
     const { _id, __v, ...userWithoutIdAndV } =
       list.find((user) => user._id === userId) || {};
     setUpdatedUser(userWithoutIdAndV);
-    console.log(userId);
   };
-
+  // Limpia los formularios
+  const handleCleanUpdate =() =>{
+    setUpdatedUser({})
+  }
+  const handleCleanAddUser =() =>{
+    setNewUser({});
+  }
   // Realiza la solicitud PATCH para actualizar el usuario en el servidor
   const handleSaveUpdatedUser = () => {
     dispatch(updateUser(updatingUserId, updatedUser));
@@ -97,11 +102,13 @@ const Formulario = () => {
             setNewUser={setNewUser}
             handleAddUser={handleAddUser}
             handleSubmit={handleSubmit}
+            handleCleanAddUser={handleCleanAddUser}
           />
         </Grid>
         <Grid xs={6}>
           <Typography variant="h3" m={3}>Actualizar deporte universitario</Typography>
           <FormularioUpdate
+            handleCleanUpdate={handleCleanUpdate}
             setUpdatedUser={setUpdatedUser}
             updatedUser={updatedUser}
             handleSaveUpdatedUser={handleSaveUpdatedUser}

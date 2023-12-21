@@ -2,17 +2,18 @@ import React from "react";
 import {
   TextField,
   Box,
-  Button,
   Select,
   InputLabel,
   MenuItem,
   Grid,
 } from "@mui/material";
+import Button from "@mui/joy/Button";
 
 const FormularioUpdate = ({
   setUpdatedUser,
   updatedUser,
   handleSaveUpdatedUser,
+  handleCleanUpdate
 }) => {
   return (
     <>
@@ -104,6 +105,8 @@ const FormularioUpdate = ({
           }
           fullWidth
         />
+        <InputLabel>ubicacion</InputLabel>
+
         <TextField
           label="Latitud"
           variant="outlined"
@@ -118,7 +121,6 @@ const FormularioUpdate = ({
               },
             })
           }
-          fullWidth
         />
         <TextField
           label="Longitud"
@@ -134,7 +136,6 @@ const FormularioUpdate = ({
               },
             })
           }
-          fullWidth
         />
         <Button
           sx={{ m: 2 }}
@@ -144,7 +145,9 @@ const FormularioUpdate = ({
         >
           Guardar Cambio
         </Button>
-        <button onClick={handleSaveUpdatedUser}>Add User</button>
+        <Button color="danger" disabled={false} size="sm" variant="outlined" onClick={handleCleanUpdate}>
+          Cancelar
+        </Button>
       </Box>
     </>
   );

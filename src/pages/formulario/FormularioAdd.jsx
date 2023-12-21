@@ -1,21 +1,11 @@
-import { React} from "react";
-import {
-  TextField,
-  Box,
-  Select,
-  InputLabel,
-  MenuItem,
-  
-} from "@mui/material";
+import { React } from "react";
+import { TextField, Box, Select, InputLabel, MenuItem } from "@mui/material";
+import Button from "@mui/joy/Button";
 
-const FormularioAdd = ({
-  newUser,
-  setNewUser,
-  handleAddUser,
-}) => {
+const FormularioAdd = ({ newUser, setNewUser, handleAddUser,handleCleanAddUser }) => {
   return (
     <>
-      <Box sx={{ m:3} }>
+      <Box sx={{ m: 3 }}>
         <InputLabel>Titulo</InputLabel>
         <TextField
           id="name"
@@ -44,7 +34,7 @@ const FormularioAdd = ({
           <MenuItem value="Atletismo">Atletismo</MenuItem>
         </Select>
 
-        <InputLabel >descripcion</InputLabel>
+        <InputLabel>descripcion</InputLabel>
         <TextField
           id="descripcionUpdate"
           label="Actualizar descripcion"
@@ -68,7 +58,7 @@ const FormularioAdd = ({
           }
           fullWidth
         />
-        <InputLabel >horarios</InputLabel>
+        <InputLabel>horarios</InputLabel>
         <TextField
           id="horarios"
           label="Actualizar titulo"
@@ -83,17 +73,19 @@ const FormularioAdd = ({
           }
           fullWidth
         />
-        <InputLabel >Url de Imagen</InputLabel>
+        <InputLabel>Url de Imagen</InputLabel>
         <TextField
           id="urlimg"
           label="urlimagen"
           variant="outlined"
           type="text"
           value={newUser.urlimg || ""}
-          onChange={(e) => setNewUser({ ...newUser, urlimg:  e.target.value.split(",") })}
+          onChange={(e) =>
+            setNewUser({ ...newUser, urlimg: e.target.value.split(",") })
+          }
           fullWidth
         />
-        <InputLabel >Requisios</InputLabel>
+        <InputLabel>Requisios</InputLabel>
         <TextField
           id="requisitos"
           label="urlimagen"
@@ -105,7 +97,7 @@ const FormularioAdd = ({
           }
           fullWidth
         />
-        <InputLabel >ubicacion</InputLabel>
+        <InputLabel>ubicacion</InputLabel>
         <TextField
           id="latitud"
           label="latitud"
@@ -138,9 +130,18 @@ const FormularioAdd = ({
             })
           }
         />
-
-        <button onClick={handleAddUser}>Add User</button>
-        </Box>  
+        <Button
+          sx={{ m: 2 }}
+          type="submit"
+          variant="outlined"
+          onClick={handleAddUser}
+        >
+          Guardar Cambio
+        </Button>
+        <Button color="danger" disabled={false} size="sm" variant="outlined" onClick={handleCleanAddUser}>
+          Cancelar
+        </Button>
+      </Box>
     </>
   );
 };
