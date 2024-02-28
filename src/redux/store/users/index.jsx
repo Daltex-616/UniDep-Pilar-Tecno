@@ -18,7 +18,7 @@ export default userSlice.reducer
 
 // traer todos los usuairos
 export const fetchAllUsers = () =>(dispatch) =>{
-    axios.get("http://localhost:4000/deportes").then((response)=>{
+    axios.get(`${import.meta.env.VITE_BACKEND_URL}${import.meta.env.VITE_ENDPOINT}`).then((response)=>{
         dispatch(setUserList(response.data))
     })
     .catch((error) => console.log(error + "pipo"))
@@ -26,7 +26,7 @@ export const fetchAllUsers = () =>(dispatch) =>{
 
 //actualizar usuario
 export const updateUser = (userId, updatedUserData) => (dispatch) => {
-    axios.put(`http://localhost:4000/deportes/${userId}`, updatedUserData)
+    axios.put(`${import.meta.env.VITE_BACKEND_URL}${import.meta.env.VITE_ENDPOINT}/${userId}`, updatedUserData)
       .then((response) => {
         dispatch(fetchAllUsers());
       })
@@ -35,7 +35,7 @@ export const updateUser = (userId, updatedUserData) => (dispatch) => {
 //agregar un usuairo 
 
 export const addUser = (user) => (dispatch) => {
-    axios.post("http://localhost:4000/deportes", user)
+    axios.post(`${import.meta.env.VITE_BACKEND_URL}${import.meta.env.VITE_ENDPOINT}`, user)
       .then((response) => {
         dispatch(fetchAllUsers());
       })
@@ -45,7 +45,7 @@ export const addUser = (user) => (dispatch) => {
   //eliminar usuarios
 
   export const deleteUser = (userId) => (dispatch) => {
-    axios.delete(`http://localhost:4000/deportes/${userId}`)
+    axios.delete(`${import.meta.env.VITE_BACKEND_URL}${import.meta.env.VITE_ENDPOINT}/${userId}`)
       .then((response) => {
         dispatch(fetchAllUsers());
       })

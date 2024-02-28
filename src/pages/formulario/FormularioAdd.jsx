@@ -9,7 +9,7 @@ const FormularioAdd = ({ newUser, setNewUser, handleAddUser,handleCleanAddUser }
         <InputLabel>Titulo</InputLabel>
         <TextField
           id="name"
-          label="Actualizar titulo"
+          label="Agregar titulo"
           variant="outlined"
           type="text"
           value={newUser.name || ""}
@@ -37,7 +37,7 @@ const FormularioAdd = ({ newUser, setNewUser, handleAddUser,handleCleanAddUser }
         <InputLabel>descripcion</InputLabel>
         <TextField
           id="descripcionUpdate"
-          label="Actualizar descripcion"
+          label="Agregar descripcion"
           variant="outlined"
           type="text"
           value={newUser.descripcion || ""}
@@ -61,7 +61,7 @@ const FormularioAdd = ({ newUser, setNewUser, handleAddUser,handleCleanAddUser }
         <InputLabel>horarios</InputLabel>
         <TextField
           id="horarios"
-          label="Actualizar titulo"
+          label="Agregar horaio"
           variant="outlined"
           type="text"
           value={newUser.horarios || ""}
@@ -136,7 +136,7 @@ const FormularioAdd = ({ newUser, setNewUser, handleAddUser,handleCleanAddUser }
           variant="outlined"
           onClick={handleAddUser}
         >
-          Guardar Cambio
+          Guardar
         </Button>
         <Button color="danger" disabled={false} size="sm" variant="outlined" onClick={handleCleanAddUser}>
           Cancelar

@@ -8,9 +8,11 @@ const FormularioUser = ({list,handleDeleteUser,handleUpdateUser}) => {
       <Table>
         <thead>
           <tr>
-            <th style={{ width: "30%" }}>Id deporte</th>
-            <th>deporte</th>
+            <th style={{ width: "25%" }}>Id deporte</th>
+            <th>Deporte</th>
             <th>Titulo</th>
+            <th>Dias</th>
+            <th>Horarios</th>
             <th>Accion</th>
           </tr>
         </thead>
@@ -20,6 +22,8 @@ const FormularioUser = ({list,handleDeleteUser,handleUpdateUser}) => {
               <td>{user._id}</td>
               <td>{user.deporte_tipo}</td>
               <td>{user.name}</td>
+              <td>{user.horarios}</td>
+              <td>{user.dias}</td>
               <td>
                 <Button
                   color="danger"

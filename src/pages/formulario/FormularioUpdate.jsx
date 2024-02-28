@@ -71,7 +71,7 @@ const FormularioUpdate = ({
         />
         <InputLabel>horarios</InputLabel>
         <TextField
-          label="Actualizar titulo"
+          label="Actualizar horario"
           variant="outlined"
           type="text"
           value={updatedUser.horarios || ""}
